@@ -1,0 +1,74 @@
+
+<div class="conference-page">
+
+  <!-- Conference count -->
+  <div class="section-heading">
+    <div>
+      <h2>Upcoming Events</h2>
+      <p>Find your next opportunity to learn and connect.</p>
+    </div>
+
+    <span class="event-count">
+      {{ conferences.length }} Conferences
+    </span>
+  </div>
+
+  <!-- Cards -->
+  <div class="conference-grid">
+
+    <div class="conference-card"
+         *ngFor="let conference of conferences">
+
+      <!-- Image -->
+      <div class="card-image">
+        <img [src]="conference.picture"
+             [alt]="conference.title">
+
+        <div class="image-overlay"></div>
+
+        <span class="date-badge">
+          <span class="calendar-icon">▣</span>
+          {{ conference.date }}
+        </span>
+
+        <span class="image-label">CONFERENCE</span>
+      </div>
+
+      <!-- Content -->
+      <div class="card-content">
+
+        <h3>{{ conference.title }}</h3>
+
+        <div class="card-info">
+          <div class="info-item">
+            <span class="info-icon">📍</span>
+            <span>{{ conference.adrs }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon">👥</span>
+            <span>
+              {{ conference.available_places }} places available
+            </span>
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="availability"
+             [class.low-availability]="conference.available_places <= 15">
+
+          <span>
+            {{ conference.available_places <= 15
+                ? 'Limited places!'
+                : 'Registration available' }}
+          </span>
+
+          <span class="status-dot"></span>
+        </div>
+
+       
+      </div>
+    </div>
+
+  </div>
+</div>

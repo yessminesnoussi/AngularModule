@@ -1,0 +1,57 @@
+
+<nav class="main-navbar">
+
+  <div class="navbar-container">
+
+    <!-- LOGO -->
+    <a class="brand" href="#">
+      <span class="brand-icon">✦</span>
+      Event<span>Hub.</span>
+    </a>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            (click)="menuOpen = !menuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- NAVIGATION -->
+    <div class="navbar-content" [class.show]="menuOpen">
+
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="nav-link active">Home</a>
+        </li>
+
+        <li>
+          <a href="#" class="nav-link">Conferences</a>
+        </li>
+
+        <li>
+          <a href="#" class="nav-link">About Us</a>
+        </li>
+
+        <li>
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <!-- ACTION BUTTON -->
+      <div class="navbar-actions">
+        <a href="#" class="login-link">Log in</a>
+
+        <a href="#" class="explore-btn">
+          Explore Events
+          <span>→</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>
