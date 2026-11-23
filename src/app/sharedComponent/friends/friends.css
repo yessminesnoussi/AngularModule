@@ -1,0 +1,8 @@
+.panel { display: flex; gap: 24px; align-items: flex-start; background: #fff; border-radius: 18px;
+  padding: 28px; margin: 18px 0; border-left: 6px solid #16a34a; box-shadow: 0 6px 24px rgba(20,30,60,.08); }
+.icon { width: 64px; height: 64px; border-radius: 50%; background: #e8f6ee; display: grid; place-items: center; font-size: 28px; flex-shrink: 0; }
+h2 { color: #17375e; font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+.add { display: flex; gap: 8px; margin-bottom: 10px; }
+input { padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; }
+button { border: 0; border-radius: 8px; padding: 8px 16px; background: #16a34a; color: #fff; font-weight: 600; }
+.empty { color: #667085; font-style: italic; list-style: none; }

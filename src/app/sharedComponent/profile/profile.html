@@ -1,0 +1,11 @@
+<section class="panel blue" id="profil">
+  <div class="icon">👤</div>
+  <div class="body">
+    <h2>Profil utilisateur</h2>
+    <p><strong>Nom :</strong> {{ name }}</p>
+    <p><strong>Email :</strong> {{ email }}</p>
+    <label>Modifier le nom (two-way binding) :
+      <input type="text" [(ngModel)]="name" />
+    </label>
+  </div>
+</section>

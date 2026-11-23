@@ -1,44 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { DatePipe } from '@angular/common';
-import { Conference } from '../../models/conference';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { Profile } from '../../sharedComponent/profile/profile';
+import { Friends } from '../../sharedComponent/friends/friends';
+import { Notifications } from '../../sharedComponent/notifications/notifications';
+import { ConferenceList } from '../list-conf/list-conf';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule,DatePipe ],
+  imports: [Profile, Friends, Notifications, ConferenceList],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home implements OnInit {
-    searchTitle : String ='';
-
-  list: Conference[];
-  title: string = 'Liste des conférences';
-
-  ngOnInit(): void {
-    this.list = [
-      new Conference(
-        'Conference Angular',
-        'Web dev conference and workshop',
-        new Date('2026-11-20'),
-        20,
-        5,
-        'https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?s=612x612&w=0&k=20&c=gWTTDs_Hl6AEGOunoQ2LsjrcTJkknf9G8BGqsywyEtE='
-      ),
-      new Conference(
-        'Conference Data Science',
-        'IA et Machine Learning',
-        new Date('2026-12-10'),
-        30,
-        30,
-        'https://picsum.photos/seed/datascience/600/400'
-      ),
-    ];
-      this.searchTitle='';
-
-  }
-
-  participate(conf:Conference){
-    conf.nbrReservation++;
-  }
-}
+export class Home {}

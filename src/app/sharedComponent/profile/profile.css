@@ -1,0 +1,7 @@
+.panel { display: flex; gap: 24px; align-items: flex-start; background: #fff; border-radius: 18px;
+  padding: 28px; margin: 18px 0; border-left: 6px solid #2f6db5; box-shadow: 0 6px 24px rgba(20,30,60,.08); }
+.icon { width: 64px; height: 64px; border-radius: 50%; background: #eaf2fc; display: grid; place-items: center; font-size: 28px; flex-shrink: 0; }
+h2 { color: #17375e; font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+p { margin: 0 0 8px; }
+label { display: block; margin-top: 10px; color: #667085; }
+input { display: block; margin-top: 4px; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; }

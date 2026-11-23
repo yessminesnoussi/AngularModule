@@ -1,0 +1,4 @@
+.menu { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 14px; background: #fff; }
+a { padding: 10px 20px; border-radius: 12px; font-weight: 700; color: #17375e; text-decoration: none; }
+a:hover { background: #eaf2fc; }
+a.active { background: #2563eb; color: #fff; }

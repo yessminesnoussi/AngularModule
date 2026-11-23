@@ -1,0 +1,17 @@
+<section class="panel orange" id="notifications">
+  <div class="icon">🔔</div>
+  <div class="body">
+    <h2>Zone de notifications</h2>
+    <p>Vous avez {{ notifications.length }} nouvelles notifications.</p>
+    <button type="button" (click)="show = !show">
+      {{ show ? 'Masquer les notifications' : 'Afficher les notifications' }}
+    </button>
+    @if (show) {
+      <ul>
+        @for (n of notifications; track $index) {
+          <li>{{ n }}</li>
+        }
+      </ul>
+    }
+  </div>
+</section>

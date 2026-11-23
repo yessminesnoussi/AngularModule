@@ -1,0 +1,6 @@
+.panel { display: flex; gap: 24px; align-items: flex-start; background: #fff; border-radius: 18px;
+  padding: 28px; margin: 18px 0; border-left: 6px solid #f59e0b; box-shadow: 0 6px 24px rgba(20,30,60,.08); }
+.icon { width: 64px; height: 64px; border-radius: 50%; background: #fff3d6; display: grid; place-items: center; font-size: 28px; flex-shrink: 0; }
+h2 { color: #17375e; font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+button { border: 0; border-radius: 8px; padding: 8px 16px; background: #f59e0b; color: #fff; font-weight: 600; }
+ul { margin-top: 12px; }

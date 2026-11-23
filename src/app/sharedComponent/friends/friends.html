@@ -1,0 +1,17 @@
+<section class="panel green" id="amis">
+  <div class="icon">👥</div>
+  <div class="body">
+    <h2>Liste des amis</h2>
+    <div class="add">
+      <input type="text" placeholder="Nom d'un ami" [(ngModel)]="newFriend" (keyup.enter)="add()" />
+      <button type="button" (click)="add()">Ajouter</button>
+    </div>
+    <ul>
+      @for (friend of friends; track $index) {
+        <li>{{ friend }}</li>
+      } @empty {
+        <li class="empty">Aucun ami pour le moment.</li>
+      }
+    </ul>
+  </div>
+</section>

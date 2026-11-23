@@ -1,46 +1,45 @@
-import { CommonModule, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { Conference } from '../../models/conference';
+import { DatePipe, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-
+import { Conference } from '../../models/conference';
 
 @Component({
   selector: 'app-list-conf',
-  imports: [CommonModule,FormsModule,DatePipe ],
+  imports: [FormsModule, DatePipe, UpperCasePipe],
   templateUrl: './list-conf.html',
   styleUrl: './list-conf.css',
 })
-export class ListConf {
+export class ConferenceList {
+  searchTitle = '';
 
-searchTitle: string ;  
-    list: Conference[] ;
-    title: string = 'Liste des conférences';
-  
-    ngOnInit(): void {
-      this.list = [
-        new Conference(
-          'Conference Angular',
-          'Web dev conference and workshop',
-          new Date('2026-11-20'),
-          20,
-          5,
-          'https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?s=612x612&w=0&k=20&c=gWTTDs_Hl6AEGOunoQ2LsjrcTJkknf9G8BGqsywyEtE='
-        ),
-        new Conference(
-          'Conference Data Science',
-          'IA et Machine Learning',
-          new Date('2026-12-10'),
-          30,
-          30,
-          'https://picsum.photos/seed/datascience/600/400'
-        ),
-      ];
-      this.searchTitle='';
-      
-    }
-  
-    participate(conf:Conference){
-      conf.nbrReservation++;
+  list: Conference[] = [
+    { id: 1, title: 'Angular 21 Conference', description: 'Nouveautés d’Angular 21',
+      date: new Date('2027-11-15'), place: 'Tunis', maxParticipants: 100, nbParticipants: 75 },
+    { id: 2, title: 'Signals Workshop', description: 'Atelier pratique sur les signals',
+      date: new Date('2027-11-30'), place: 'Ariana', maxParticipants: 50, nbParticipants: 44 },
+    { id: 3, title: 'Web Conference', description: 'Tendances du développement web',
+      date: new Date('2027-11-20'), place: 'Sousse', maxParticipants: 80, nbParticipants: 80 },
+  ];
+
+  /** Conférences dont le titre contient le texte saisi (insensible à la casse). */
+  get filteredList(): Conference[] {
+    const term = this.searchTitle.trim().toLowerCase();
+    return this.list.filter(c => c.title.toLowerCase().includes(term));
+  }
+
+  remaining(c: Conference): number {
+    return c.maxParticipants - c.nbParticipants;
+  }
+
+  /** green : >= 10 places, orange : 1 à 9 places, red : 0 place */
+  statusClass(c: Conference): string {
+    const r = this.remaining(c);
+    return r === 0 ? 'btn-red' : r < 10 ? 'btn-orange' : 'btn-green';
+  }
+
+  register(c: Conference): void {
+    if (this.remaining(c) > 0) {
+      c.nbParticipants++;
     }
   }
+}
